@@ -136,7 +136,6 @@ class FeatureLogger:
                         }
                     },
                     "size": "##DOC_IDS_SIZE##",
-                    "_source": False,
                 }
             )
             .replace('"##DOC_IDS_JSON##"', "{{#toJson}}__doc_ids{{/toJson}}")
