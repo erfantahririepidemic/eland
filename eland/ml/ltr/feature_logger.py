@@ -158,7 +158,7 @@ class FeatureLogger:
         }
 
         return {
-            hit["kosmosId"]: hit["matched_queries"] if "matched_queries" in hit else {}
+            hit["_source"]["kosmosId"]: hit["matched_queries"] if "matched_queries" in hit else {}
             for hit in self._client.perform_request(
                 "GET", __path, params=__query, headers=__headers, body=__body
             )["hits"]["hits"]
