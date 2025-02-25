@@ -124,11 +124,15 @@ class FeatureLogger:
 
         return (
             json.dumps(
-                {
+                 {
                     "query": {
                         "bool": {
                             "should": queries,
-                            "filter": {"ids": {"values": "##DOC_IDS_JSON##"}},
+                            "filter": {
+                                "terms": {
+                                    "kosmosId": "##DOC_IDS_JSON##"
+                                }
+                            }
                         }
                     },
                     "size": "##DOC_IDS_SIZE##",
